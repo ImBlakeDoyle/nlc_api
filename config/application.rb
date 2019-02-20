@@ -13,6 +13,10 @@ require "action_cable/engine"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
+require "json"
+require "ibm_watson"
+# require "ibm_watson/natural_language_classifier_v1"
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
