@@ -4,9 +4,7 @@ class MainController < ApplicationController
         @text = form_params["content"]
 
         categories = MyClassificationBuilder.classify(@text)
-
-
-        puts categories.result
+        p categories
 
         @content = categories.result
         @topclass = categories.result["top_class"]

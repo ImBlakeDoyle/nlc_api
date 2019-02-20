@@ -14,11 +14,9 @@ class MyClassificationBuilder
         text: text
         )
 
-        categories
+        SaveClassificationRecord.create(text)
 
-        # save to databases
-
-
+        categories        
     end
 
 end
