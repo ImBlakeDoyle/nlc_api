@@ -14,7 +14,9 @@ class MyClassificationBuilder
         text: text
         )
 
-        SaveClassificationRecord.create(text)
+        id = SaveClassificationRecord.create(text)
+
+        SaveCategoryRecord.create(categories, id)
 
         categories        
     end
