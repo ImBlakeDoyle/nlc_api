@@ -5,9 +5,12 @@ class MainController < ApplicationController
 
         categories = MyClassificationBuilder.classify(@text)
 
+        id = SaveClassificationRecord.create(@text)
+
+        SaveCategoryRecord.create(categories, id)
+
         @content = categories.result
-        @topclass = categories.result["top_class"]
-        @confidence = categories.result["classes"][0]["confidence"]
+        @classes = categories.result["classes"]
 
     end
 
