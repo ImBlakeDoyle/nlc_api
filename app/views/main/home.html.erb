@@ -1,4 +1,6 @@
-<h1>Test</h1>
+<h1>API test</h1>
 <%= form_tag do %>
-  <%= text_field_tag(:content) %>
+    <%= label_tag(:content, "Content:") %>
+    <%= text_field_tag(:content) %>
+    <%= submit_tag("Submit") %>
 <% end %>
