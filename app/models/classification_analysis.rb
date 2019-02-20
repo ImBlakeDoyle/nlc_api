@@ -1,0 +1,2 @@
+class ClassificationAnalysis < ApplicationRecord
+end
