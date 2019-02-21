@@ -7,6 +7,10 @@ class MainController < ApplicationController
 
     end
 
+    def index
+        @records = ClassificationAnalysis.all
+    end
+
     private
     def form_params
         params.permit(:content)
