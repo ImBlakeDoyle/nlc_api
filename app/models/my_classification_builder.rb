@@ -14,11 +14,11 @@ class MyClassificationBuilder
         text: text
         )
 
-        id = SaveClassificationRecord.create(text).id
+        record = SaveClassificationRecord.create(text)
 
-        SaveCategoryRecord.create(categories, id)
+        SaveCategoryRecord.create(categories, record.id)
 
-        categories        
+        return record      
     end
 
 end

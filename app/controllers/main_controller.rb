@@ -3,10 +3,9 @@ class MainController < ApplicationController
     def display
         @text = form_params["content"]
 
-        categories = MyClassificationBuilder.classify(@text)
+        @record = MyClassificationBuilder.classify(@text)
 
-        @content = categories.result
-        @classes = categories.result["classes"]
+        @associated = Category.where(classification_analysis_id: @record.id)
 
     end
 
