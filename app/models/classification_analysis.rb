@@ -1,3 +1,3 @@
 class ClassificationAnalysis < ApplicationRecord
-    has_many :categorys
+    has_many :categories
 end

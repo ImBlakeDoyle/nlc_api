@@ -2,7 +2,7 @@
 
 <h2><%= @record.text%></h2>
 
-<% @associated.each do |f|%>
+<% @record.categories.each do |f|%>
     <p>Category: <%= f.name%></p>
     <p>Confidence: <%= f.confidence%></p>
 <% end %>

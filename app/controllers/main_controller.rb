@@ -5,8 +5,6 @@ class MainController < ApplicationController
 
         @record = MyClassificationBuilder.classify(@text)
 
-        @associated = Category.where(classification_analysis_id: @record.id)
-
     end
 
     private
