@@ -14,14 +14,18 @@
  *= require_self
  */
 
- .main-table{
+ .main-table{  
      border: 1px solid black;
-     border-collapse: collapse;
+     border-collapse: collapse; 
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
  }
+ 
  th, td{
     border: 1px solid black;
     border-collapse: collpase;  
+    padding: 0.5rem 0.5rem;
  }
+ 
  td {
      width: 300px;
  }

@@ -1,8 +1,10 @@
 <h1>NLC Result</h1>
 
-<h2><%= @record.text%></h2>
+<%# <h2><%= @record.text%></h2> 
 
-<% @record.categories.each do |f|%>
-    <p>Category: <%= f.name%></p>
-    <p>Confidence: <%= f.confidence%></p>
-<% end %>
+<%# <% @record.categories.each do |f|%> 
+    <%# <p>Category: <%= f.name%></p> 
+    <%# <p>Confidence: <%= f.confidence%></p> 
+<%# <% end %> 
+
+<%= @record %>
