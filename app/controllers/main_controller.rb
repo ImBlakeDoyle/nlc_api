@@ -1,28 +1,14 @@
-include IBMWatson
-require 'json'
-
 class MainController < ApplicationController
 
     def display
         @text = form_params["content"]
 
-        natural_language_classifier = NaturalLanguageClassifierV1.new(
-        iam_apikey: Rails.application.credentials.nlc_api,
-        url: Rails.application.credentials.nlc_url
-        )
+        @record = MyClassificationBuilder.classify(@text)
 
-        categories = natural_language_classifier.classify(
-        classifier_id: Rails.application.credentials.classifier_id,
-        text: @text
-        )
+    end
 
-
-        puts categories.result
-
-        @content = categories.result
-        @topclass = categories.result["top_class"]
-        @confidence = categories.result["classes"][0]["confidence"]
-
+    def index
+        @records = ClassificationAnalysis.all
     end
 
     private

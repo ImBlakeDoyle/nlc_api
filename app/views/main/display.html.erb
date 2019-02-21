@@ -1,6 +1,8 @@
 <h1>NLC Result</h1>
-<h3>Query: "<%= @text%>"</h3>
-<h3>Top Category: <%= @topclass%></h3>
-<h3>Confidence: <%= @confidence%>%</h3>
-<hr>
-<p><%= @content%></p>
+
+<h2><%= @record.text%></h2>
+
+<% @record.categories.each do |f|%>
+    <p>Category: <%= f.name%></p>
+    <p>Confidence: <%= f.confidence%></p>
+<% end %>

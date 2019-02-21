@@ -10,9 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_02_20_050916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.float "confidence"
+    t.bigint "classification_analysis_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["classification_analysis_id"], name: "index_categories_on_classification_analysis_id"
+  end
+
+  create_table "classification_analyses", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "text"
+  end
+
+  add_foreign_key "categories", "classification_analyses"
 end

@@ -1,0 +1,22 @@
+<h3>All records</h3>
+
+<table class="main-table">
+    <thead>
+        <tr>
+            <th>Text</th>
+            <th>Created</th>
+            <th colspan="10">Categories</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @records.each do |x|%>
+            <tr>
+                <td><%= x.text%></td>
+                <td><%= x.created_at%></td>
+                    <% x.categories.each do |y|%>
+                        <td><%= y.name%>: <%= y.confidence.round(5)%></td>
+                    <% end %>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
