@@ -3,9 +3,9 @@ class MainController < ApplicationController
     def display
         @text = form_params["content"]
 
-        # @record = MyClassificationBuilder.classify(@text)
+        @record = MyClassificationBuilder.classify(@text)
 
-        @record = NetClassification.classify(@text)
+        # @record = NetClassification.classify(@text)
 
     end
 
