@@ -5,8 +5,6 @@ class MainController < ApplicationController
 
         @record = MyClassificationBuilder.classify(@text)
 
-        # @record = NetClassification.classify(@text)
-
     end
 
     def index

@@ -12,11 +12,6 @@ class TestBuilder
         classifier_id: Rails.application.credentials.classifier_id,
         text: "is it hot today?"
         )
-
-        # record = SaveClassificationRecord.create(text)
-
-        # SaveCategoryRecord.create(categories, record.id)
-
         p categories
     end
 
