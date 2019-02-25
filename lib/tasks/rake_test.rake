@@ -3,9 +3,7 @@ require 'json'
 
 namespace :rake_test do
 
- 
-
-  task test1: :environment do
+  task queryTime: :environment do
 
         @startArray = []
         @resultArray = []
@@ -24,7 +22,7 @@ namespace :rake_test do
           # Set start time
           startTime = Time.new
           @startArray.push(startTime)
-          puts MyClassificationBuilder.classify(i)
+          puts NlcClassificationBuilder.classify(i)
 
           # Set end time
           endTime = Time.new

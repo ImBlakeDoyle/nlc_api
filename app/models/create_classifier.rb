@@ -5,6 +5,7 @@ include IBMWatson
 
 class CreateClassifier
 
+  # Takes file and name to create a classifier
   def self.createClassifier(name, file)
     
     puts "file is #{file}"

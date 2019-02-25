@@ -1,8 +1,9 @@
 include IBMWatson
 require 'json'
 
-class MyClassificationBuilder
+class NlcClassificationBuilder
 
+    # Takes text from query and classifies
     def self.classify(text)
         natural_language_classifier = NaturalLanguageClassifierV1.new(
         iam_apikey: Rails.application.credentials.nlc_api,
@@ -14,8 +15,10 @@ class MyClassificationBuilder
         text: text
         )
 
+        # Creates a classification record in db
         record = SaveClassificationRecord.create(text)
 
+        # Creates category record in db
         SaveCategoryRecord.create(categories, record.id)
 
         return record      

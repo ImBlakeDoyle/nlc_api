@@ -6,10 +6,10 @@
   <p>Created is: <%= x["created"]%></p>
   
   
-  <button type="button"><%= link_to "SHOW", classifiers_show_path(:id => x["classifier_id"]) %></button> 
+  <button type="button" class="main-button"><%= link_to "SHOW", classifiers_show_path(:id => x["classifier_id"]), :class=>"main-button-text"%></button> 
 
   <div>
-<button type="button" class="btn btn-outline-primary"><%= link_to "HOME", root_path%></button>
+<button type="button" class="main-button"><%= link_to "HOME", root_path, :class=>"main-button-text"%></button>
 </div> 
 
    
