@@ -4,7 +4,13 @@
   <p>URL is: <%= x["url"]%></p>
   <p>Name is: <%= x["name"]%></p>
   <p>Created is: <%= x["created"]%></p>
-  <%= link_to "Show", classifiers_show_path(:id => x["classifier_id"]) %> 
+  
+  
+  <button type="button"><%= link_to "SHOW", classifiers_show_path(:id => x["classifier_id"]) %></button> 
+
+  <div>
+<button type="button" class="btn btn-outline-primary"><%= link_to "HOME", root_path%></button>
+</div> 
 
    
 <% end %> 

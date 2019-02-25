@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
-  root 'main#home'
-
-  post '/', to: 'main#display'
+  root 'classifications#home'
 
   get "/all", to: 'main#index'
+
+  get "/query", to: 'main#home'
+
+  post "/query", to: 'main#display'
 
   get "/classifiers", to: 'classifications#index'
 
