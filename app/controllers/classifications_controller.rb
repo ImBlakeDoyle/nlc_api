@@ -37,11 +37,10 @@ class ClassificationsController < ApplicationController
   # DELETE /classifications/1
   # DELETE /classifications/1.json
   def destroy
-    @classification.destroy
-    respond_to do |format|
-      format.html { redirect_to classifications_url, notice: 'Classification was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+    id = params["id"]
+    @classifier = DeleteClassifier.deleteClassifier(id)
+    redirect_to classifiers_path
+  end 
+  
 
 end

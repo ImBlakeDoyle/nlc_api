@@ -12,8 +12,8 @@ class ShowClassifier
           status = natural_language_classifier.get_classifier(
             classifier_id: id
           )
-          
           return status.result
     end
 
-end
+end 
+

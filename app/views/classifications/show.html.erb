@@ -5,4 +5,7 @@
   <p>Name is: <%= @classifier["name"]%></p>
   <p>Created is: <%= @classifier["created"]%></p>
   <p>Status is: <%= @classifier["status"]%></p>
-  <p>Status description: <%= @classifier["status_description"]%></p>
+  <p>Status description: <%= @classifier["status_description"]%></p> 
+  <%= link_to "Delete", classifiers_path(:id => @classifier["classifier_id"]), data: {confirm: "Are you sure you want to delete this classifier?"}, method: :delete%> 
+
+  
