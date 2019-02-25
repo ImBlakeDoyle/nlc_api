@@ -1,7 +1,10 @@
-<h1>Test classifications</h1>
+<h1>All Classification</h1>
 <% @classifiers.each do |x| %>
   <p>ID is: <%= x["classifier_id"]%></p>
   <p>URL is: <%= x["url"]%></p>
   <p>Name is: <%= x["name"]%></p>
   <p>Created is: <%= x["created"]%></p>
-<% end %>
+  <%= link_to "Show", view_classifier_path(:id => x["classifier_id"]), class:"btn btn-outline-primary" %> 
+
+   
+<% end %> 

@@ -1,17 +1,19 @@
 include IBMWatson
 require 'json'
 
-class ListClassifiers
+class ShowClassifier
 
-    def self.getClassifiers
+    def self.showClassifier(id)
         natural_language_classifier = NaturalLanguageClassifierV1.new(
             iam_apikey: Rails.application.credentials.nlc_api,
             url: Rails.application.credentials.nlc_url
           )
           
-          classifiers = natural_language_classifier.list_classifiers
-
-          return classifiers.result["classifiers"]
+          status = natural_language_classifier.get_classifier(
+            classifier_id: id
+          )
+          
+          return status.result
     end
 
 end

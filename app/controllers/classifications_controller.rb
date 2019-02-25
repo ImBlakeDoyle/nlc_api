@@ -1,5 +1,5 @@
 class ClassificationsController < ApplicationController
-  before_action :set_classification, only: [:show, :edit, :update, :destroy]
+  # before_action :set_classification, only: [:show, :edit, :update, :destroy]
 
   # GET /classifications
   # GET /classifications.json
@@ -11,6 +11,8 @@ class ClassificationsController < ApplicationController
   # GET /classifications/1
   # GET /classifications/1.json
   def show
+    id = params["id"]
+    @classifier = ShowClassifier.showClassifier(id)
   end
 
   # GET /classifications/new

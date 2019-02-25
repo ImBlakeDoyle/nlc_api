@@ -1,4 +1,8 @@
-<p id="notice"><%= notice %></p>
+<h1>View Classification</h1>
 
-<%= link_to 'Edit', edit_classification_path(@classification) %> |
-<%= link_to 'Back', classifications_path %>
+  <p>ID is: <%= @classifier["classifier_id"]%></p>
+  <p>URL is: <%= @classifier["url"]%></p>
+  <p>Name is: <%= @classifier["name"]%></p>
+  <p>Created is: <%= @classifier["created"]%></p>
+  <p>Status is: <%= @classifier["status"]%></p>
+  <p>Status description: <%= @classifier["status_description"]%></p>
