@@ -3,7 +3,7 @@ class MainController < ApplicationController
     def display
         @text = form_params["content"]
 
-        @record = MyClassificationBuilder.classify(@text)
+        @record = NlcClassificationBuilder.classify(@text)
 
     end
 
@@ -13,6 +13,6 @@ class MainController < ApplicationController
 
     private
     def form_params
-        params.permit(:content)
+        params.permit(:content, :authenticity_token, :utf8, :commit)
     end
 end

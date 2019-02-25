@@ -1,0 +1,8 @@
+<h1>API test</h1>
+<%= form_tag(classifier_create_path, method: :post, data: {confirm: "Are you sure you want to upload this classifier?"}) do %>
+    <%= label_tag(:name, "Classifier Name")%><br>
+    <%= text_field_tag(:name)%><br>
+    <%= label_tag(:file, "csv file:") %><br>
+    <%= file_field_tag(:file) %><br>
+    <%= submit_tag("SUBMIT CSV") %>
+<% end %> 
