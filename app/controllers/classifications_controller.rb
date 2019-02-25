@@ -5,7 +5,7 @@ class ClassificationsController < ApplicationController
   # GET /classifications.json
   def index
     # @classifications = Classification.all
-    @classifiers = ListClassifiers.getClassifiers()
+    @classifiers = ListClassifiers.listClassifiers()
   end
 
   # GET /classifications/1
@@ -20,18 +20,13 @@ class ClassificationsController < ApplicationController
     # @classification = Classification.new
   end
 
-  # GET /classifications/1/edit
-  def edit
-  end
-
   # POST /classifications
   # POST /classifications.json
   def create
-
+    name = params["name"]
+    file = params["file"]
+    CreateClassifier.createClassifier(name, file)
   end
-
-  # PATCH/PUT /classifications/1
-  # PATCH/PUT /classifications/1.json
 
 
   # DELETE /classifications/1
