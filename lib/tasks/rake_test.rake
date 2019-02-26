@@ -10,11 +10,11 @@ namespace :rake_test do
         @endArray = []
 
         @sentences = [
-          "Is it hot?",
-          "what's the weather like?",
-          "is it raining outside?",
-          "What's the chance of it being cold?",
-          "How humid is it?"
+          "I am filled with sadness",
+          "I am tired",
+          "Money is a concern",
+          "I have nobody",
+          "My relationship has ended"
         ]
 
         @sentences.each do |i|
