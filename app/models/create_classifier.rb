@@ -7,21 +7,23 @@ class CreateClassifier
 
   # Takes file and name to create a classifier
   def self.createClassifier(name, file)
-    
-    puts "file is #{file}"
-    puts "name is #{name}"
 
-  #   natural_language_classifier = NaturalLanguageClassifierV1.new(
-  #     iam_apikey: Rails.application.credentials.nlc_api,
-  #     url: Rails.application.credentials.nlc_url
-  #   )
+    # puts "File is #{file}"
+
+    filepath = File.absolute_path(file)
+
+    natural_language_classifier = NaturalLanguageClassifierV1.new(
+      iam_apikey: Rails.application.credentials.nlc_api,
+      url: Rails.application.credentials.nlc_url
+    )
     
-  #   File.open(file) do |data|
-  #     classifier = natural_language_classifier.create_classifier(
-  #       training_data: training_data,
-  #       metadata: {name: name, language: "en"}
-  #     )
-  # end
+    File.open(filepath) do |data|
+      classifier = natural_language_classifier.create_classifier(
+        training_data: data,
+        metadata: {name: name, language: "en"}
+      )
+    end
+
   end
 
 end
